@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.9.5/umd/single-spa.dev.js"></script>
+  <title>Document</title>
+
+</head>
+<body>
+  <script type="module">
+    const { registerApplication, start } = singleSpa;
+
+    registerApplication({
+      name: 'app1',
+      app: () => import('./apps/app1.js'),
+      activeWhen: location => location.hash.startsWith('#/app1'),
+    });
+
+    registerApplication({
+      name: 'app2',
+      app: () => import('./apps/app2.js'),
+      activeWhen: location => location.hash.startsWith('#/app2'),
+    });
+
+    start();
+    
+  </script>
+  <p>
+    <a href="#/app1">app1</a>
+    <a href="#/app2">app2</a>
+  </p>
+  <div id="sub_app"></div>
+</body>
+</html>
