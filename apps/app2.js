@@ -1,6 +1,6 @@
 let root = null;
 
-export const bootstrap = () => {
+export const bootstrap = (props) => {
   console.log('app2 bootstrap');
   return Promise.resolve()
   .then(() => {
@@ -8,7 +8,7 @@ export const bootstrap = () => {
   });
 }
 
-export const mount = () => {
+export const mount = (props) => {
   console.log('app2 mount');
   return Promise.resolve()
   .then(() => {
@@ -18,7 +18,7 @@ export const mount = () => {
   });
 }
 
-export const unmount = () => {
+export const unmount = (props) => {
   console.log('app2 unmount');
   return Promise.resolve()
   .then(() => {
